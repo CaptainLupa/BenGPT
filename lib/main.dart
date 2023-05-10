@@ -6,7 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 void main() {
-  if (!Platform.isWindows) {
+  if (!Platform.isWindows && !Platform.isMacOS) {
     Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   }
 
@@ -45,7 +45,8 @@ class _BenGPTState extends State<BenGPT> {
   @override
   Widget build(BuildContext context) {
     TextField question = TextField(
-      decoration: const InputDecoration(hintText: "Ask Ben a question:", border: OutlineInputBorder()),
+      decoration: const InputDecoration(
+          hintText: "Ask Ben a question:", border: OutlineInputBorder()),
       onSubmitted: processQuestion,
       controller: controller,
     );
