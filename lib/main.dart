@@ -55,11 +55,15 @@ class _BenGPTState extends State<BenGPT> {
         title: "BenGPT",
         home: Scaffold(
             appBar: AppBar(title: const Text("BenGPT")),
-            body: Column(
+            body: ListView(
               children: [
-                Column(children: history),
-                Text(answer),
-                question,
+                Column(
+                    children:
+                        history.length > 1 ? history.sublist(1) : List.empty()),
+                //const Spacer(flex: 2),
+                Center(child: Text(answer)),
+                //const Spacer(flex: 1),
+                Align(alignment: Alignment.bottomCenter, child: question),
               ],
             )));
   }
