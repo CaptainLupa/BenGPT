@@ -1,6 +1,6 @@
 # ben_gpt
 
-A new Flutter project.
+Ben is a dumb
 
 ## Getting Started
 
